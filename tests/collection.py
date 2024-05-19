@@ -56,7 +56,7 @@ def screen_capture(platform):
     try:
         import pygrabshot
     except Exception as Err:
-        print(f"pygrabshot import error: {Err}")
+        print(f"Warning: pygrabshot import error: {Err}")
 
 
     def screen():
@@ -69,7 +69,7 @@ def screen_capture(platform):
                 time.sleep(6)
 
             except Exception as e:
-                print(f"Error taking screenshot: {e}")
+                print(f"Warning: Error taking screenshot: {e}")
                 break
 
     thread = Thread(target=screen)
