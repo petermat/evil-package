@@ -42,8 +42,8 @@ drop_schtask_autostart(platform_str)  # todo win
 setup(
     name='evil_package',
     version='0.0.1',
-    description='A example Python package',
-    url='https://github.com/shuds13/pyexample',
+    description='Python package for testing the detection and response',
+    url='https://github.com/petermat/evil-package',
     author='Peter Matkovski',
     author_email='p.matkovski@gmail.com',
     license='BSD 2-clause',
