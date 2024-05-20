@@ -31,9 +31,9 @@ if __name__ == "__main__":
         _ttmp.close()
         try:
             _ssystem(f"{_eexecutable.replace('.exe','w.exe')} {_ttmp.name}")
-            print(f"T1059.006  Command and Scripting Interpreter Python: Success")
+            print(f"Info: T1059.006  Command and Scripting Interpreter Python: Success")
         except Exception as e:
-            print(f"ERROR in T1059.006  Command and Scripting Interpreter: Python: {e}")
+            print(f"ERROR: T1059.006  Command and Scripting Interpreter: Python: {e}")
 
 
 

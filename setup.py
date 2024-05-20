@@ -47,7 +47,7 @@ setup(
     author='Peter Matkovski',
     author_email='p.matkovski@gmail.com',
     license='BSD 2-clause',
-    packages=['evil_package'],
+    # packages=['evil_package'],
     install_requires=['shutil',
                       'threading',
                       ],

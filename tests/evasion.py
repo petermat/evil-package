@@ -22,8 +22,8 @@ def run_evasion_tests(platform):
             of the Python environment respectively. When Python is running inside a virtual environment,
             these attributes hold paths different from sys.prefix.
             """
+            print("Info: T1497.001 Virtualization detected")
             execute_switch = False
-
 
 
     if platform == "Windows":
@@ -37,6 +37,7 @@ def run_evasion_tests(platform):
                                            "C:/windows/system32/drivers/VBosMouse.sys",
                                            ]):
             execute_switch = False
+            print("Info: T1497.001 Virtualization detected")
 
         try:
             import psutil
@@ -52,6 +53,7 @@ def run_evasion_tests(platform):
                 """
                 Detection of processes related to Virtual environments
                 """
-            execute_switch = False
+                execute_switch = False
+                print("Info: T1497.001 Virtualization detected")
 
     return execute_switch
