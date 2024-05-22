@@ -14,9 +14,12 @@ from tests.persistense import drop_profile_modification
 from tests.persistense import drop_schtask_autostart
 
 platform_str = platform.system()  # 'Linux' , 'Darwin' , 'Java' , 'Windows'
+print("Info: evil_package starting to run for platform " + platform_str)
+
 
 # discovery
 username = get_os_info(platform_str)
+
 
 # evasion
 run_evasion_tests(platform_str)

