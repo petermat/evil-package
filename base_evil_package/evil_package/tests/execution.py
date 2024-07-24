@@ -24,7 +24,7 @@ def count_seconds():
     while count<10:
         time.sleep(1)
         count += 1
-        print(f'T1059.006 Python Interpreter Execution')
+        print(f'Debug: T1059.006 Python Interpreter Execution')
 if __name__ == "__main__":
     p = multiprocessing.Process(target=count_seconds)
     p.start()""")
@@ -34,8 +34,6 @@ if __name__ == "__main__":
             print(f"Info: T1059.006  Command and Scripting Interpreter Python: Success")
         except Exception as e:
             print(f"ERROR: T1059.006  Command and Scripting Interpreter: Python: {e}")
-
-
 
 
 

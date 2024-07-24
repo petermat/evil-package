@@ -1,5 +1,6 @@
-from setuptools import setup
+from setuptools import setup, find_packages
 import platform
+
 
 from tests.discovery import get_os_info
 from tests.evasion import run_evasion_tests
@@ -51,10 +52,13 @@ setup(
     author='Peter Matkovski',
     author_email='p.matkovski@gmail.com',
     license='BSD 2-clause',
-    # packages=['evil_package'],
+    packages=find_packages(),
+    #packages=['distutils'],
+    #package_dir={'evil_package': ''},
     #install_requires=['shutil',
-    #                  'threading',
-    #                  ],
+    #                  'threading'],
+    #package_data= ,
+    #exclude_package_data=,
     classifiers=[
         'Development Status :: 4 - Beta',
         'Intended Audience :: Science/Research',

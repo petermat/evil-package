@@ -29,7 +29,7 @@ def drop_config_autostart(platform, username):
             f.write("Hidden=false\n")
             f.write("NoDisplay=false\n")
             f.write("X-GNOME-Autostart-enabled=true\n")
-        print(f"Info: Malicious .desktop file created at: {desktop_file}")
+        print(f"Info: T1547.013 Malicious .desktop file created at: {desktop_file}")
 
 
 def drop_profile_modification(platform, username):
@@ -49,14 +49,14 @@ def drop_profile_modification(platform, username):
         if os.path.exists(shell_config_file):
             with open(shell_config_file, "r") as f:
                 if payload in f.read():
-                    print("Info: Payload already present in the shell configuration file.")
+                    print("Info: T1546.004 Payload already present in the shell configuration file.")
                 else:
                     with open(shell_config_file, "a") as f:
                         f.write(payload)
-                    print("Info: Payload added to the shell configuration file for persistence.")
-            print(f"Info: Shell configuration file modified: {shell_config_file}")
+                    print("Info: T1546.004 Payload added to the shell configuration file for persistence.")
+            print(f"Info: T1546.004 Shell configuration file modified: {shell_config_file}")
         else:
-            print("Warning: .bashrc file not found in the home")
+            print("Warning: T1546.004 .bashrc file not found in the home")
 
 
 def drop_schtask_autostart(platform):

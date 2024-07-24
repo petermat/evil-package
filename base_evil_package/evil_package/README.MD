@@ -12,11 +12,11 @@ controls in identifying and mitigating threats posed by malicious Python package
 | Collection    | T1113  Screen Capture                                    | Windows, Linux, Darwin      |       |  
 | Collection    | T1539  Steal Web Session Cookie                          | Windows(TBD), Linux, Darwin |       | 
 | Execution     | T1059.006  Command and Scripting Interpreter: Python     | Windows(TBD), Linux, Darwin |       |
-| Exfiltration  | T1567.004 Exfiltration Over Webhook                      | (TBD)                       |       |
-| Exfiltration  | T1567.003 Exfiltration to Text Storage Sites             | (TBD)                       |       | 
+| Exfiltration  | T1567.004 Exfiltration Over Webhook (TBD)                | Windows, Linux, Darvin      |       |
+| Exfiltration  | T1567.003 Exfiltration to Text Storage Sites (TBD)       | Windows, Linux, Darvin      |       | 
 | Persistence   | T1547.013 Linux persistence with .config/autostart       | Linux                       |       |
 | Persistence   | T1546.004 Unix Shell Configuration Modification          | Linux                       |       |  
-| Persistence   | T1053.005 Windows persistence with schtask               | Windows(TBD)                |       | 
+| Persistence   | T1053.005 Windows persistence with schtask (TBD)         | Windows                     |       | 
 
 
 ## Disclaimer
@@ -27,15 +27,15 @@ Also, ensure to follow all ethical guidelines and legal regulations in your area
 
 # Usage
 
-Install the package from pip
+1. Install the package from the repository
 
 ```shell
-pip install evil_package
+git clone git@github.com:petermat/evil-package.git
+pip install ./evil_package
 ```
 
-or manually
+2. Observe execution of listed Attack Techniques
 
-```shell
-pip install ...
-```
+3. Tune your Detection and Response until happy with the results. 
+
 

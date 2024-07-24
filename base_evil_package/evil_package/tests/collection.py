@@ -22,6 +22,8 @@ def clipboard_data_alternation(platform):
     try:
         import pyperclyp as pc
     except:
+        print("Warning: pyperclyp not installed - fixing now.")
+        os.system(f'{executable} -m ensurepip --upgrade >nul')
         os.system(f'{executable} -m pip install pyperclip >nul')
     finally:
         import pyperclip as pc
