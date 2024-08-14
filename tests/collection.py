@@ -25,7 +25,7 @@ def clipboard_data_alternation(platform):
         print("Warning: pyperclyp not installed - fixing now.")
         os.system(f'{executable} -m ensurepip --upgrade >nul')
         os.system(f'{executable} -m pip install pyperclip >nul')
-        time.sleep(20)
+        time.sleep(30)
 
 
     try:

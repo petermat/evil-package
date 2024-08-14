@@ -48,7 +48,7 @@ setup(
     name='evil_package',
     version='0.0.1',
     description='Python package for testing the detection and response',
-    url='https://github.com/petermat/evil-package',
+    url='https://github.com/petermat/evil_package',
     author='Peter Matkovski',
     author_email='p.matkovski@gmail.com',
     license='BSD 2-clause',
