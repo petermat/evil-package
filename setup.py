@@ -52,7 +52,7 @@ setup(
     license='BSD 2-clause',
     #packages=find_packages(),
     packages=['evil_package'],
-    #package_dir={'evil_package': ''},
+    package_dir={'evil_package': ['cache','src','tests']},
     #install_requires=['shutil',
     #                  'threading'],
     #package_data= ,
